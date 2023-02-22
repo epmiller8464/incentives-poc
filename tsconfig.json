@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "lib": ["dom", "esnext"],
+    "module": "es2015",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "strict": true,
+    "target": "es6",
+    "typeRoots": ["./src/types"]
+  },
+  "extends": "expo/tsconfig.base"
+}
