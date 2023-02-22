@@ -6,7 +6,8 @@
 - [x] Prettier config
 - [x] Install and configure husky
 - [x] Install and configure jest (unit test framework)
-- [ ] Configure project structure
+- [x] Configure project structure
+- [ ] Build a basic component library for the POC
 
 ## Description
 
