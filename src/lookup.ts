@@ -30,6 +30,7 @@ type Incentive = {
   eer2: Float
   maxValue: Float
 }
+
 type Utility = {}
 type Address = {}
 type ComfortAttributes = {}
@@ -56,16 +57,25 @@ const findIncentives = async (customerInputs: CustomerQualifications): Promise<I
 }
 
 
+/**
+ * findProductIncentives
+ * @param customerInputs
+ * @param products
+ */
 const findProductIncentives = async (
   customerInputs: CustomerQualifications,
-  products: Product[],
-  incentive: Incentive[]): Promise<ProductIncentiveMatch[]> => {
+  products: Product[]): Promise<ProductIncentiveMatch[]> => {
 
   const incentives: Incentive[] = await findIncentives(customerInputs)
 
+  let matches : ProductIncentiveMatch[] = []
   // match logic
+  for (const product of products) {
 
-  return []
+    const match = matchProductIncentives(product,incentives)
+    matches.push (match)
+  }
+  return matches
 }
 
 /**
@@ -73,10 +83,18 @@ const findProductIncentives = async (
  * @param product
  * @param localIncentives
  */
-const productIncentiveMatch = (product:Product, localIncentives: Incentive[]):ProductIncentiveMatch => {
+const matchProductIncentives = (product: Product, localIncentives: Incentive[]): ProductIncentiveMatch => {
+
+  const qualifiedIncentives = []
+  for (const incentive of localIncentives) {
+
+    const qualifies = product.seer2 >= incentive.seer2 && product.eer2 === incentive.eer2 && (product.compressorType === incentive.compressorType)
+    if (qualifies)
+      qualifiedIncentives.push(incentive)
+  }
 
   return {
-    incentives: [],
-    product
+    incentives: qualifiedIncentives,
+    product,
   }
 }
