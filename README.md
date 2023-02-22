@@ -3,8 +3,9 @@
 # TODO List
 
 - [x] Configure Typescript
-- [ ] Prettier config
-- [ ] Install and configure husky
+- [x] Prettier config
+- [x] Install and configure husky
+- [x] Install and configure jest (unit test framework)
 - [ ] Configure project structure
 
 ## Description
