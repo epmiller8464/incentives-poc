@@ -88,7 +88,7 @@ const matchProductIncentives = (product: Product, localIncentives: Incentive[]):
   const qualifiedIncentives = []
   for (const incentive of localIncentives) {
 
-    const qualifies = product.seer2 >= incentive.seer2 && product.eer2 === incentive.eer2 && (product.compressorType === incentive.compressorType)
+    const qualifies = product.seer2 >= incentive.seer2 && product.eer2 >= incentive.eer2 && (product.compressorType === incentive.compressorType)
     if (qualifies)
       qualifiedIncentives.push(incentive)
   }
