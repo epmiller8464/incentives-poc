@@ -1,21 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View,Button } from 'react-native';
+import 'react-native-gesture-handler'
+import React from 'react'
+import {Provider as PaperProvider} from 'react-native-paper'
+
+// import {DataProvider} from './src/hooks';
+import AppNavigation from './src/App'
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Incentives POC Call To Action</Text>
-      <Button title={"Let\'s get started"}></Button>
-      <StatusBar style="auto" />
-    </View>
-  );
+    // <DataProvider>
+    <PaperProvider>
+      <AppNavigation />
+    </PaperProvider>
+    // </DataProvider>
+  )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
