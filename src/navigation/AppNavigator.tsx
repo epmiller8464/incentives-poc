@@ -12,7 +12,7 @@ const AppNavigator = () => {
     <RootStack.Navigator
       initialRouteName={initialRouteName}
       screenOptions={{
-        headerShown: false,
+        headerShown: true,
       }}
     >
       {Object.keys(routes).map((key) => {

@@ -6,7 +6,8 @@ import StyledTheme from '../theme'
 const Income = ({navigation}) => {
   const systemTypes = [
     {option: '$0 (or less)', type: '0'},
-    {option: '$0 - $3000', type: '1'},
+    //TODO: capture the income level as free form for this question
+    {option: '$0 - $30,000', type: '1', rebate_eligible: false,show_free_form:true},
     {option: '$30,000 - $80,000', type: '2'},
     {option: '$80,000 - $150,000', type: '3'},
     {option: '$150,000+', type: '4'},
